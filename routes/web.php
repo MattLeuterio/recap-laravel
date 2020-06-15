@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Home
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Blog
+Route::get('/blog', 'BlogController@index')->name('blog.index-blog');
+
+Route::get('/blog/show/{slug}', 'BlogController@show')->name('blog.show');
